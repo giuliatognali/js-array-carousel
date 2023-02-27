@@ -9,9 +9,10 @@ let itemsContent = '';
 //variabile dell'immagine dell'array
 let active = 0;
 
-for(let i = 0; i < imgs.length; i++){
+for (let i = 0; i < imgs.length; i++) {
     console.log(imgs[i]);
 
+    //rimuovo l'elemento HTML e innietto la stringa nell'HTML
     itemsContent += '<div class="item"><img src="img/01.webp" alt=""></div>'
 }
 
@@ -21,18 +22,26 @@ document.querySelector('.item').classList.add('show');
 //variabili per l'effetto slider
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
+const items = document.querySelectorAll('.item');
 
+//node list 
+console.log(items);
 
 //definisco gli eventi 
 
 next.addEventListener('click',
-function(){
- alert('successivo')
+    function () {
 
-})
+        if (active < items.lenght - 1) {
+            //console.log('successivo');
+            active++ ;
+            
+        }
+        console.log(active);
+    })
 prev.addEventListener('click',
-function(){
- alert('precedente')
+    function () {
+        //alert('precedente')
 
-})
+    })
 
